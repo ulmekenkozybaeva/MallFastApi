@@ -1,2 +1,2 @@
 # MallFastApi
-The shop's model created using FastApi in Python.
+The shop's database model created using FastApi in Python.
