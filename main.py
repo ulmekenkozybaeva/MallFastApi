@@ -105,42 +105,42 @@ def read_mall_item(products_id: int):
     for products in mall_db:
         if products.id == products_id:
             return products
-    raise HTTPException(status_code=404, detail="Todo item not found")
+    raise HTTPException(status_code=404, detail="Item not found")
 
 @app.get("/basket/{basket_id}", response_model=Basket)
 def read_mall_item(basket_id: int):
     for basket in mall_db:
         if basket.id == basket_id:
             return basket
-    raise HTTPException(status_code=404, detail="Todo item not found")
+    raise HTTPException(status_code=404, detail="Basket not found")
 
 @app.get("/staff/{staff_id}", response_model=Staff)
 def read_mall_item(staff_id: int):
     for staff in mall_db:
         if staff.id == staff_id:
             return staff
-    raise HTTPException(status_code=404, detail="Todo item not found")
+    raise HTTPException(status_code=404, detail="Staff not found")
 
 @app.get("/customer/{customer_id}", response_model=Customer)
 def read_mall_item(customer_id: int):
     for customer in mall_db:
         if customer.id == customer_id:
             return customer
-    raise HTTPException(status_code=404, detail="Todo item not found")
+    raise HTTPException(status_code=404, detail="Customer not found")
 
 @app.get("/customerhasbasket/{customerhasbasket_id}", response_model=CustomerHasBasket)
 def read_mall_item(customerhasbasket_id: int):
     for customerhasbasket in mall_db:
         if customerhasbasket.id == customerhasbasket_id:
             return customerhasbasket
-    raise HTTPException(status_code=404, detail="Todo item not found")
+    raise HTTPException(status_code=404, detail="Customer's basket not found")
 
 @app.get("/order/{order_id}", response_model=Order)
 def read_mall_item(order_id: int):
     for order in mall_db:
         if order.id == order_id:
             return order
-    raise HTTPException(status_code=404, detail="Todo item not found")
+    raise HTTPException(status_code=404, detail="Order not found")
 
 # put
 
@@ -150,7 +150,7 @@ def update_mall_item(products_id: int, products: Products):
         if existing_products.id == products_id:
             mall_db[index] = products
             return products
-    raise HTTPException(status_code=404, detail="Todo item not found")
+    raise HTTPException(status_code=404, detail="Product ID not found")
 
 @app.put("/basket/{basket_id}", response_model=Basket)
 def update_mall_item(basket_id: int, basket: Basket):
@@ -158,7 +158,7 @@ def update_mall_item(basket_id: int, basket: Basket):
         if existing_basket.id == basket_id:
             mall_db[index] = basket
             return basket
-    raise HTTPException(status_code=404, detail="Todo item not found")
+    raise HTTPException(status_code=404, detail="Basket ID not found")
 
 @app.put("/staff/{staff_id}", response_model=Staff)
 def update_mall_item(staff_id: int, staff: Staff):
@@ -166,7 +166,7 @@ def update_mall_item(staff_id: int, staff: Staff):
         if existing_staff.id == staff_id:
             mall_db[index] = staff
             return staff
-    raise HTTPException(status_code=404, detail="Todo item not found")
+    raise HTTPException(status_code=404, detail="Staff ID not found")
 
 @app.put("/customer/{customer_id}", response_model=Customer)
 def update_mall_item(customer_id: int, customer: Customer):
@@ -174,7 +174,7 @@ def update_mall_item(customer_id: int, customer: Customer):
         if existing_customer.id == customer_id:
             mall_db[index] = customer
             return customer
-    raise HTTPException(status_code=404, detail="Todo item not found")
+    raise HTTPException(status_code=404, detail="Customer ID not found")
 
 @app.put("/customerhasbasket/{customerhasbasket_id}", response_model=CustomerHasBasket)
 def update_mall_item(customerhasbasket_id: int, customerhasbasket: CustomerHasBasket):
@@ -182,7 +182,7 @@ def update_mall_item(customerhasbasket_id: int, customerhasbasket: CustomerHasBa
         if existing_customerhasbasket.id == customerhasbasket_id:
             mall_db[index] = customerhasbasket
             return customerhasbasket
-    raise HTTPException(status_code=404, detail="Todo item not found")
+    raise HTTPException(status_code=404, detail="Customer's basket ID not found")
 
 @app.put("/order/{order_id}", response_model=Order)
 def update_mall_item(order_id: int, order: Order):
@@ -190,7 +190,7 @@ def update_mall_item(order_id: int, order: Order):
         if existing_order.id == order_id:
             mall_db[index] = order
             return order
-    raise HTTPException(status_code=404, detail="Todo item not found")
+    raise HTTPException(status_code=404, detail="Order ID not found")
 
 
 # delete
@@ -201,7 +201,7 @@ def delete_mall_item(products_id: int):
         if products.id == products_id:
             deleted_products = mall_db.pop(index)
             return deleted_products
-    raise HTTPException(status_code=404, detail="Todo item not found")
+    raise HTTPException(status_code=404, detail="Item not found")
 
 @app.delete("/basket/{basket_id}", response_model=Basket)
 def delete_mall_item(basket_id: int):
@@ -209,7 +209,7 @@ def delete_mall_item(basket_id: int):
         if basket.id == basket_id:
             deleted_basket = mall_db.pop(index)
             return deleted_basket
-    raise HTTPException(status_code=404, detail="Todo item not found")
+    raise HTTPException(status_code=404, detail="Basket not found")
 
 @app.delete("/staff/{staff_id}", response_model=Staff)
 def delete_mall_item(staff_id: int):
@@ -217,7 +217,7 @@ def delete_mall_item(staff_id: int):
         if staff.id == staff_id:
             deleted_staff = mall_db.pop(index)
             return deleted_staff
-    raise HTTPException(status_code=404, detail="Todo item not found")
+    raise HTTPException(status_code=404, detail="Staff not found")
 
 @app.delete("/customer/{customer_id}", response_model=Customer)
 def delete_mall_item(customer_id: int):
@@ -225,7 +225,7 @@ def delete_mall_item(customer_id: int):
         if customer.id == customer_id:
             deleted_customer = mall_db.pop(index)
             return deleted_customer
-    raise HTTPException(status_code=404, detail="Todo item not found")
+    raise HTTPException(status_code=404, detail="Customer not found")
 
 @app.delete("/customerhasbasket/{customerhasbasket_id}", response_model=CustomerHasBasket)
 def delete_mall_item(customerhasbasket_id: int):
@@ -233,7 +233,7 @@ def delete_mall_item(customerhasbasket_id: int):
         if customerhasbasket.id == customerhasbasket_id:
             deleted_customerhasbasket = mall_db.pop(index)
             return deleted_customerhasbasket
-    raise HTTPException(status_code=404, detail="Todo item not found")
+    raise HTTPException(status_code=404, detail="Customer's basket not found")
 
 @app.delete("/order/{order_id}", response_model=Order)
 def delete_mall_item(order_id: int):
@@ -241,4 +241,4 @@ def delete_mall_item(order_id: int):
         if order.id == order_id:
             deleted_order = mall_db.pop(index)
             return deleted_order
-    raise HTTPException(status_code=404, detail="Todo item not found")
+    raise HTTPException(status_code=404, detail="Order not found")
